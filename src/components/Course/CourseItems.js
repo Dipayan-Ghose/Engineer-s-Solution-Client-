@@ -8,7 +8,7 @@ const CourseItems = () => {
 const getItems= useLoaderData();
 const [courses, setCourses]= useState([]);
 
-console.log(getItems);
+
 
     useEffect(()=>{
         fetch('http://localhost:5000/course')
@@ -21,7 +21,7 @@ console.log(getItems);
         <div className='cardDesign'>
          {
             getItems.map(item=> <CourseCard 
-                key={getItems.course_id}
+                key={item.id}
                 item={item}
             ></CourseCard>)
          }

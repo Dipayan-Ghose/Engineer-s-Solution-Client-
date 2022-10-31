@@ -6,6 +6,8 @@ import CourseDetails from "../CourseDetails/CourseDetails";
 import Faq from "../FAQ/Faq";
 import Home from "../Home/Home";
 import Main from "../Layout/Main";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 export const routes=createBrowserRouter([
     {
@@ -34,6 +36,14 @@ export const routes=createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/courseDetails/${params.id}`),
                
                 element: <CourseDetails></CourseDetails>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
             }
 
 

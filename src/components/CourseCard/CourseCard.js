@@ -8,7 +8,7 @@ const CourseCard = ({ item, buttonHandle }) => {
 
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card cardDesign bg-base-100 shadow-xl">
         <figure>
           <img className="imgWidth" src={image_url} alt="Shoes" />
         </figure>

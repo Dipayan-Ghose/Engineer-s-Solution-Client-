@@ -35,3 +35,26 @@ h3{
    margin-left: 20px;
     color: rgb(251, 253, 253);
 }
+
+.signin{
+    justify-content: center;
+}
+.img{
+    align-items: center;
+}
+
+.title.title{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+@media screen and (width-min:300px) and (width-max: 800px) {
+    .signin:hover{
+        position: absolute;
+        display: block;
+        justify-content: center;
+
+        /* dropdown dropdown-hover */
+    }
+    
+}
