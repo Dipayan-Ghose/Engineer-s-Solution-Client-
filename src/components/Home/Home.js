@@ -1,11 +1,19 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
+import CourseList from "../LeftSide/CourseList";
 import './home.css';
 
 const Home = () => {
   return (
 
-        <Carousel className="layout rounded-2 mx-auto">
+    <Row>
+    <Col lg='3'>
+    
+    <CourseList></CourseList>
+    </Col>
+    <Col lg='9'>
+    <Carousel className="layout rounded-2 mx-auto">
           <Carousel.Item interval={900}>
             <img
               className="d-block img" 
@@ -49,6 +57,10 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+    </Col>
+</Row>
+
+        
     
   );
 };

@@ -26,7 +26,7 @@ const {user, providerLogout} = useContext(authContext); //destructured
 
 
 const clickLogout=()=>{
-  toast("Sign Out Successfully");
+  toast("Sign Out Successfully",{ position: "top-center",autoClose: 1000});
   providerLogout()
   .then(()=>{})
   .catch(error=>console.error(error))
@@ -50,10 +50,10 @@ const clickLogout=()=>{
             user ?
              <div className="d-flex">
                 <div className='my-auto title'> 
-               <h3 href="" className='  ' title={user?.displayName }> {user.uid? <Image style={{width: '35px'}} roundedCircle src={user.photoURL}></Image> : <FaUser style={{width: '20px'}}></FaUser> }</h3>
+               <h3 href="" className='  ' title={user?.displayName }> {user.uid? <Image style={{width: '35px'}} roundedCircle src={user?.photoURL}></Image> : <FaUser style={{width: '20px'}}></FaUser> }</h3>
               </div> 
               <div className=''> 
-              <Link to='/login'><button onClick={clickLogout} className="linkDesign m-2 toast toast-top toast-end">Sign Out</button> </Link> 
+              <Link to='/'><button onClick={clickLogout} className="linkDesign m-2 ">Sign Out</button> </Link> 
               </div> 
             
             </div>

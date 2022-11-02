@@ -1,6 +1,8 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import CourseList from "../LeftSide/CourseList";
 import "./CourseDetails.css";
+import { Col, Row } from "react-bootstrap";
 
 const CourseDetails = () => {
   const loadDetails = useLoaderData();
@@ -9,6 +11,12 @@ const CourseDetails = () => {
   const { id, details, title, total_enrolled, image_url } = loadDetails;
 
   return (
+    <Row>
+    <Col lg='3'>
+    
+    <CourseList></CourseList>
+    </Col>
+    <Col lg='9'>
     <div>
 <div className="window border rounded-4 mt-3 bg-blue-200">
   <div className="flex justify-center p-2 text-white fs-2 rounded-4 bg-blue-700">{title}</div>
@@ -24,6 +32,9 @@ const CourseDetails = () => {
 
  
     </div>
+    </Col>
+</Row>
+    
   );
 };
 

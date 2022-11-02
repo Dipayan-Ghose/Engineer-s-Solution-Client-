@@ -5,6 +5,7 @@ import { FaArrowCircleDown, FaGithub } from "react-icons/fa";
 import { RiMailLine } from "react-icons/ri";
 import { GoogleAuthProvider } from "firebase/auth";
 import { Link } from "react-router-dom";
+import './Login.css';
 
 const Login = () => {
   const { providerLogin } = useContext(authContext);
@@ -26,9 +27,9 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-blue-200 rounded my-4">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-200">
+      <div className="hero width mx-auto min-h-screen bg-blue-200 rounded my-4">
+        <div className="hero-content flex-col lg:flex-row-reverse  mx-auto">
+          <div className="card flex-shrink-0  mx-auto  max-w-sm shadow-2xl bg-blue-200">
             <h1 className="text-3xl text-dark mt-2">Login Now!</h1>
 
             <div className="card-body">
