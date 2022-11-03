@@ -33,6 +33,7 @@ if (loading){
    <ToastContainer limit={1} />
 
    return children;
+   
 };
 
 export default Private;
