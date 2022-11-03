@@ -29,7 +29,15 @@ registerUser(email, password)
       setError(error.message)
       });
 
-
+const handleUpdate=(name, url)=>{
+  const profile= {
+    displayName: name,
+    photoURL: url
+  }
+updateUserProfile(profile)
+.then(()=>{})
+.catch(error=> console.error(error))
+};
 
 };
 
