@@ -8,6 +8,7 @@ import Faq from "../FAQ/Faq";
 import Home from "../Home/Home";
 import Main from "../Layout/Main";
 import Login from "../Login/Login";
+import Private from "../PrivateRoute/Private";
 import Register from "../Register/Register";
 
 export const routes=createBrowserRouter([
@@ -48,7 +49,7 @@ export const routes=createBrowserRouter([
             },
             {
                 path: 'checkout',
-                element: <Checkout></Checkout>
+                element: <Private><Checkout></Checkout></Private>
             }
 
 

@@ -10,7 +10,8 @@ const Login = () => {
   const navigate= useNavigate();
   const [error, setError]= useState('');
   const location = useLocation();
-  const from= location.state?.form?.pathname || '/';
+  const from= location.state?.from?.pathname || '/';
+
   const { providerLogin, signInUser } = useContext(authContext);
 
   const providerGoogle = new GoogleAuthProvider();
@@ -19,7 +20,7 @@ const Login = () => {
   const handleSubmit=(event)=>{
     event.preventDefault();
     const form= event.target;
-    const email= form.name.value;
+    const email= form.email.value;
     const password= form.password.value;
     signInUser(email,password)
     .then(res=>{
@@ -41,7 +42,7 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
-        navigate('/')
+        navigate(from, {replace: true});
       })
       .catch((error) => console.error(error));
   };
@@ -51,7 +52,7 @@ const Login = () => {
     .then(res=>{
       const user= res.user;
       console.log(user);
-      navigate('/')
+      navigate(from, {replace: true});
     })
     .catch(error=> console.error(error));
   };
