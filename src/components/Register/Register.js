@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { authContext } from '../Context/AuthProvider/AuthProvider';
 import './Register.css';
+
 const Register = () => {
+
+const {registerUser}= useContext(authContext);
+const [error, setError]= useState('');
 
 const handleRegistration=(e)=>{
 e.preventDefault();
@@ -10,6 +16,17 @@ const photo= form.url.value;
 const email= form.email.value;
 const password= form.password.value;
 console.log(name, photo,email,password);
+
+registerUser(email, password)
+   .then((res) => {
+        const user = res.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+      setError(error.message)
+      });
 
 };
 
@@ -73,7 +90,14 @@ console.log(name, photo,email,password);
               <div className="form-control mt-2 border-0">
                 <button className="btn btn-primary">Register</button>
               </div>
+              <p className="text-danger my-1">{error}</p>
             </div>
+            <p className=" text-primary mb-1 mb-0 text-center ">
+                    Already have an account? <br></br>
+                    <span> 
+                      <Link to="/login">Login Now</Link>{" "}
+                    </span>
+                  </p>
             </form>
             
           </div>

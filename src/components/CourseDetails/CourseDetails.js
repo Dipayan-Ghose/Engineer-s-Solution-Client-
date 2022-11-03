@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import CourseList from "../LeftSide/CourseList";
 import "./CourseDetails.css";
 import { Col, Row } from "react-bootstrap";
@@ -25,7 +25,7 @@ const CourseDetails = () => {
     <h1 className="card-title text-blue-800 mx-auto fs-2">Total Students Enrolled: {total_enrolled}</h1>
     <p className="p-4 text-start">{details}</p>
     <div className="card-actions justify-center">
-      <button className="btn btn-warning mb-5 ">Get Premium Access</button>
+     <Link to='/checkout'> <button className="btn btn-warning mb-5 ">Get Premium Access</button></Link>
     </div>
 </div>
 </div>

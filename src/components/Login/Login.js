@@ -1,35 +1,67 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { authContext } from "../Context/AuthProvider/AuthProvider";
 import { FcGoogle, FcDown } from "react-icons/fc";
 import { FaArrowCircleDown, FaGithub } from "react-icons/fa";
-import { RiMailLine } from "react-icons/ri";
-import { GoogleAuthProvider } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Login.css';
 
 const Login = () => {
-  const { providerLogin } = useContext(authContext);
+  const navigate= useNavigate();
+  const [error, setError]= useState('');
+  const location = useLocation();
+  const from= location.state?.form?.pathname || '/';
+  const { providerLogin, signInUser } = useContext(authContext);
 
   const providerGoogle = new GoogleAuthProvider();
+  const providerGithub= new GithubAuthProvider();
+
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+    const form= event.target;
+    const email= form.name.value;
+    const password= form.password.value;
+    signInUser(email,password)
+    .then(res=>{
+      const user = res.user;
+      console.log(user);
+      form.reset();
+      setError('');
+      navigate(from, {replace: true});
+    })
+    .catch(error=>{
+     console.error(error)
+    setError(error.message);
+    });
+
+  };
 
   const googleSignIn = () => {
     providerLogin(providerGoogle)
       .then((res) => {
         const user = res.user;
         console.log(user);
+        navigate('/')
       })
       .catch((error) => console.error(error));
   };
 
-  const emailSignIn = () => {
-    providerLogin();
+  const githubSignIn = () => {
+    providerLogin(providerGithub)
+    .then(res=>{
+      const user= res.user;
+      console.log(user);
+      navigate('/')
+    })
+    .catch(error=> console.error(error));
   };
 
   return (
     <div>
       <div className="hero width mx-auto min-h-screen bg-blue-200 rounded my-4">
         <div className="hero-content flex-col lg:flex-row-reverse  mx-auto">
-          <div className="card flex-shrink-0  mx-auto  max-w-sm shadow-2xl bg-blue-200">
+         <form onSubmit={handleSubmit}>
+         <div className="card flex-shrink-0  mx-auto  max-w-sm shadow-2xl bg-blue-200">
             <h1 className="text-3xl text-dark mt-2">Login Now!</h1>
 
             <div className="card-body">
@@ -41,6 +73,7 @@ const Login = () => {
                   type="text"
                   placeholder="email"
                   className="input input-bordered"
+                  name='email'
                   required
                   
                 />
@@ -53,7 +86,9 @@ const Login = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
+                  name='password'
                   required
+
                 />
                 <label className="label">
                   <p className=" text-danger mt-1 mb-0 text-start ">
@@ -67,8 +102,12 @@ const Login = () => {
               <div className="form-control mt-1 border-0">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <p className="text-danger my-1">
+                {error}
+              </p>
             </div>
           </div>
+         </form>
           <div className="text-center lg:text-left">
             <ul
               tabIndex={0}
@@ -83,10 +122,8 @@ const Login = () => {
                 {" "}
                 <FcGoogle></FcGoogle> <span className="mx-2"> Google</span>{" "}
               </button>
-              <button onClick={emailSignIn} className=" btn btn-ghost d-flex">
-                <RiMailLine></RiMailLine> <span className="mx-2"> Email</span>{" "}
-              </button>
-              <button onClick={emailSignIn} className=" btn btn-ghost d-flex">
+              
+              <button onClick={githubSignIn} className=" btn btn-ghost d-flex">
                 <FaGithub></FaGithub> <span className="mx-2"> Github</span>{" "}
               </button>
             </ul>
