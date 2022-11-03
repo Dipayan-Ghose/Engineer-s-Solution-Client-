@@ -5,7 +5,7 @@ import './Register.css';
 
 const Register = () => {
 
-const {registerUser}= useContext(authContext);
+const {registerUser, updateUserProfile}= useContext(authContext);
 const [error, setError]= useState('');
 
 const handleRegistration=(e)=>{
@@ -22,11 +22,14 @@ registerUser(email, password)
         const user = res.user;
         console.log(user);
         form.reset();
+        handleUpdate(name,photo);
       })
       .catch((error) => {
         console.error(error);
       setError(error.message)
       });
+
+
 
 };
 

@@ -1,3 +1,6 @@
 .imgWidth{
     width: 90%px;
 }
+.pdf{
+    display: flex;
+}

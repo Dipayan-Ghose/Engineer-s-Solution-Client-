@@ -10,7 +10,8 @@ import { Image } from "react-bootstrap";
 import { authContext } from "../Context/AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {FaArrowCircleDown , FaUser} from 'react-icons/fa';
+import {FaUser} from 'react-icons/fa';
+import headerLogo from './headerLogo.png';
 
 const Header = () => {
 const {user, providerLogout} = useContext(authContext); //destructured
@@ -37,6 +38,8 @@ const clickLogout=()=>{
 
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
     <Container>
+     
+     <Image src={headerLogo} className='logo rounded-5 mx-1'></Image> 
     <Navbar.Brand ><Link to='/' className='fs-4 shadow p-2 rounded linkDes'> Engineer's Solution </Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -48,7 +51,7 @@ const clickLogout=()=>{
         <Nav className=' img'>
           {
             user ?
-             <div className="d-flex">
+             <div className="rightSide ">
                 <div className='my-auto title'> 
                <h3 href="" className='  ' title={user?.displayName }> {user.uid? <Image style={{width: '35px'}} roundedCircle src={user?.photoURL}></Image> : <FaUser style={{width: '20px'}}></FaUser> }</h3>
               </div> 
