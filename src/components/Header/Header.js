@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { createBrowserRouter, Link } from "react-router-dom";
 import { themeChange } from "theme-change";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -11,18 +11,27 @@ import { authContext } from "../Context/AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {FaUser} from 'react-icons/fa';
-import headerLogo from './headerLogo.png';
+import headerLogo from './headerLogo.webp';
+import App from "../../App";
 
 const Header = () => {
 const {user, providerLogout} = useContext(authContext); //destructured
+const [theme, setTheme] = useState("light-theme");
 
+const toggleTheme=()=>{
+  console.log(toggleTheme)
+if(theme=== 'dark-theme'){
+  setTheme('light-theme');
+}
+else{
+  setTheme('dark-theme');
+}
+};
 
-
-  useEffect(() => {
-    themeChange(false);
-    // 👆 false parameter is required for react project
-  }, []);
-
+useEffect(()=>{
+  document.body.className=theme;
+ 
+},[theme]);
 
 
 
@@ -34,12 +43,13 @@ const clickLogout=()=>{
 }
 
   return (
+    
 
 
-    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
-    <Container>
+    <Navbar  collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Container  >
      
-     <Image src={headerLogo} className='logo rounded-5 mx-1'></Image> 
+     <Image src={headerLogo} className='logo rounded-5 mx-1 '></Image> 
     <Navbar.Brand ><Link to='/' className='fs-4 shadow p-2 rounded linkDes'> Engineer's Solution </Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -69,6 +79,13 @@ const clickLogout=()=>{
           
         </Nav>
       </Navbar.Collapse>
+     
+      
+     <div  className='switch'>
+      
+     <input type="checkbox" onChange={toggleTheme} className="toggle" />
+
+     </div>
     </Container>
     <ToastContainer />
   </Navbar>
