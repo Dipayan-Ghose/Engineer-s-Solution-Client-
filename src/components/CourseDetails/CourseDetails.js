@@ -17,18 +17,15 @@ const CourseDetails = () => {
   
   const ref = React.createRef();
 
-
-
-
   return (
-    <Row>
+    <Row className="my-4">
     <Col lg='3'>
     
     <CourseList></CourseList>
     </Col>
     <Col lg='9'>
     <div>
-<div className="window border rounded-4 mt-3 bg-blue-200">
+<div className="window border rounded-4 bg-blue-200">
   <div className="p-2  text-white fs-2 rounded-4 bg-blue-700">
     <div className="d-flex align-items-center justify-content-center">{title}</div> 
     <h5 className="d-flex my-0 justify-content-end">

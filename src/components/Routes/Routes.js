@@ -4,7 +4,6 @@ import Checkout from "../Checkout/Checkout";
 import Course from "../Course/CourseItems";
 import CourseCard from "../CourseCard/CourseCard";
 import CourseDetails from "../CourseDetails/CourseDetails";
-import Faq from "../FAQ/Faq";
 import Home from "../Home/Home";
 import Main from "../Layout/Main";
 import Login from "../Login/Login";
@@ -24,10 +23,6 @@ export const routes=createBrowserRouter([
                 path: '/courses',
                 loader: ()=> fetch('https://develop-course-server.vercel.app/courseDetails'),
                 element:<Course></Course>
-            },
-            {
-                path: '/faq',
-                element:<Faq></Faq>
             },
             {
                 path: '/blog',

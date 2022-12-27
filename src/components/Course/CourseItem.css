@@ -1,9 +1,10 @@
 .cardDesign{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    width: 400px;
-    gap: 15px;
-    margin-top: 10px;
+    width: 480px;
+    gap: 20px;
+    
+    
 }
 
 @media screen and (min-width: 300px) and (max-width:800px) {
@@ -12,7 +13,7 @@
         grid-template-columns: repeat(1,1fr);
         width: 340px;
         gap: 15px;
-        margin-top: 10px;
+        
     }
     
 }

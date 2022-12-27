@@ -1,9 +1,29 @@
 .tableDesign{
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 5px;
     color: rgba(14, 37, 212, 0.809);
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+    position: relative;
     
 }
+.tableDesign:hover{
+    background-color: aliceblue;
+}
+.tableDesign:focus{
+    list-style-type: disc; 
+}
+
+.cardHeight{
+    min-height: 500px;
+    position: fixed;
+}
+
+.CourseName:hover, 
+.CourseName:focus{
+    color: blue;
+    transform:translateY(1.5px);
+    font-weight: 400;
+   
+}
+

@@ -12,8 +12,6 @@ const Main = () => {
             <Container>
                 
                     <Outlet></Outlet>
-                    
-              
 
             </Container>
             

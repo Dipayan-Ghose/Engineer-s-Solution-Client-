@@ -20,7 +20,7 @@ const [courses, setCourses]= useState([]);
 
 
     return (
-        <Row>
+        <Row className='my-4'>
     <Col lg='3'>
     <CourseList></CourseList>
     </Col>

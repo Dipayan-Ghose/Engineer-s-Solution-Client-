@@ -7,9 +7,8 @@ import './home.css';
 const Home = () => {
   return (
 
-    <Row>
+    <Row className="my-4">
     <Col lg='3'>
-    
     <CourseList></CourseList>
     </Col>
     <Col lg='9'>
