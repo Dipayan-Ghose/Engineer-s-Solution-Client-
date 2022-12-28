@@ -1,6 +1,12 @@
 .imgWidth{
-    width: 90%px;
+    width: 380px;
 }
 .pdf{
     display: flex;
+}
+
+@media only screen and (max-Width:990px) {
+    .window{
+        margin-top: 25px;
+    }
 }

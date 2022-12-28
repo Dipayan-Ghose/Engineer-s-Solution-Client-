@@ -12,10 +12,9 @@ if (loading){
 }
 
    if(!user){
-    toast("You Need to Login In first",{ position: "top-center",autoClose: 1500},{
+    toast("You Need to Login In first",{ position: "top-center",autoClose: 1000},{
         toastId: "success"        
     });
-    console.log(toast);
     return <Navigate to='/login' state={{from: location}} replace ></Navigate>;
 
    }

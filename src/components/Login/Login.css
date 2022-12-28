@@ -1,3 +1,10 @@
 .width{
-    width: 90%;
+    Width: 90%;
+}
+
+@media only screen and (min-Width:800px)  {
+    .visibility img{
+        visibility: visible;    
+    }
+    
 }

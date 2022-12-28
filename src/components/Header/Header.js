@@ -15,7 +15,6 @@ import headerLogo from './headerLogo.webp';
 const Header = () => {
 const {user, providerLogout} = useContext(authContext); //destructured
 
-
 const clickLogout=()=>{
   toast("Sign Out Successfully",{ position: "top-center",autoClose: 1000});
   providerLogout()
@@ -33,7 +32,9 @@ const clickLogout=()=>{
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           <Link to='/courses' className='linkDesign'>Courses</Link>
-            <Link to='/blog' className='linkDesign'>Blog</Link>
+            <Link to='/contact' className='linkDesign'>Contact</Link>
+            <Link to='/about' className='linkDesign'>About</Link>
+
         </Nav>
         <Nav className=' img'>
           {

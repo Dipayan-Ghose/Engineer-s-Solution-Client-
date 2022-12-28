@@ -1,12 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import Blog from "../Blog/Blog";
+import About from "../About/About";
 import Checkout from "../Checkout/Checkout";
+import Contact from "../Contact/Contact";
 import Course from "../Course/CourseItems";
 import CourseCard from "../CourseCard/CourseCard";
 import CourseDetails from "../CourseDetails/CourseDetails";
 import Home from "../Home/Home";
 import Main from "../Layout/Main";
 import Login from "../Login/Login";
+import Page404 from "../Page404/Page404";
 import Private from "../PrivateRoute/Private";
 import Register from "../Register/Register";
 
@@ -25,8 +27,12 @@ export const routes=createBrowserRouter([
                 element:<Course></Course>
             },
             {
-                path: '/blog',
-                element: <Blog></Blog>
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
+                path:'/about',
+                element: <About></About>
             },
             {
                 path: '/courseDetails/:id',
@@ -53,7 +59,7 @@ export const routes=createBrowserRouter([
         
     },
     {
-        path: '*', element: <div>404 Not Found</div>
+        path: '*', element: <Page404></Page404>
     }
    
 ])
