@@ -1,0 +1,7 @@
+
+@media only screen and (max-Width:800px) {
+  .aboutResponsive{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

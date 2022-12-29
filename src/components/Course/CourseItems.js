@@ -25,7 +25,7 @@ const [courses, setCourses]= useState([]);
     <CourseList></CourseList>
     </Col>
     <Col lg='9'>
-    <div className='cardDesign'>
+    <div className='cardDesign '>
          {
             getItems.map(item=> <CourseCard 
                 key={item.id}

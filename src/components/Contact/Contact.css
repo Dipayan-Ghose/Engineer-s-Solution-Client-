@@ -1,0 +1,11 @@
+@media only screen and (max-Width:600px) {
+    .responsiveContact{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        
+    }
+    .infoResponsive{
+        margin-left:40%;
+    }
+}

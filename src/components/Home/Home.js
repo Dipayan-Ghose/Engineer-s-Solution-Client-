@@ -40,7 +40,7 @@ const Home = () => {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <p>Computer Networking</p>
+            
              
             </Carousel.Caption>
           </Carousel.Item>
@@ -51,7 +51,7 @@ const Home = () => {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <p>Web Programming</p>
+              
               
             </Carousel.Caption>
           </Carousel.Item>

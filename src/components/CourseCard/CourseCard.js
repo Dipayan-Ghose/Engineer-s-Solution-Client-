@@ -14,7 +14,7 @@ const CourseCard = ({ item, buttonHandle }) => {
         loading? <Skeleton height="150px" width="300px" borderRadius='10px'></Skeleton>
         :
       
-      <div className="card cardDesign rounded-4 bg-base-100 shadow-xl">
+      <div className="card cardDesign mx-auto rounded-4 bg-base-100 shadow-xl">
         <figure>
           <img className="imgWidth" src={image_url} alt="Shoes" />
         </figure>
