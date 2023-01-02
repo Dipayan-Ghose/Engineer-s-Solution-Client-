@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import {FaUser} from 'react-icons/fa';
 import headerLogo from './headerLogo.webp';
 
-
 const Header = () => {
 const {user, providerLogout} = useContext(authContext); //destructured
 
@@ -23,17 +22,18 @@ const clickLogout=()=>{
 }
 
   return (
-    
-    <Navbar  collapseOnSelect expand="lg" variant="dark" className="headerDesign bg-gradient-to-r from-blue-500 to-cyan-500">
+  
+ <Navbar  collapseOnSelect expand="lg" variant="dark" className="headerDesign bg-gradient-to-r from-blue-500 to-cyan-500">
     <Container  >
           <Image src={headerLogo} className='logo rounded-5 mx-1 '></Image> 
     <Navbar.Brand ><Link to='/' className='fs-4 shadow p-2 rounded linkDes'> Engineers' <span className="text-yellow-300">Solution</span> </Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
+          <Link to='/' className='linkDesign'>Home</Link>
           <Link to='/courses' className='linkDesign'>Courses</Link>
-            <Link to='/contact' className='linkDesign'>Contact</Link>
-            <Link to='/about' className='linkDesign'>About</Link>
+          <Link to='/contact' className='linkDesign'>Contact</Link>
+          <Link to='/about' className='linkDesign'>About</Link>
 
         </Nav>
         <Nav className=' img'>
@@ -61,6 +61,9 @@ const clickLogout=()=>{
     </Container>
     <ToastContainer />
   </Navbar>
+   
+    
+   
 
 
 
