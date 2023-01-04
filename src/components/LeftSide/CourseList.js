@@ -22,16 +22,19 @@ const CourseList = ({ course }) => {
   return (
     <div>
         <div className="card bg-base-100 rounded rounded-4 cardHeight shadow-xl">
-        <div className="card-body">
+        <div className="card-body" >
         { 
         loading? <Skeleton count={6} height='50px' borderRadius='10px'></Skeleton> :
         courses.map((course) => (
         <ul
           key={course.id}
           className="p-2 fs-5 text-center tableDesign  bg-base-100 border border-2 rounded-box"
-        >
+          data-aos="fade-right"
+          data-aos-delay="70"
+          data-aos-duration="900"
+          >
           <Link to={`/courseDetails/${course.id}`} className="tableDesign"> 
-            <li className="CourseName">{course.course_name}</li>
+            <li className="CourseName" >{course.course_name}</li>
           </Link>
         </ul>
       ))}

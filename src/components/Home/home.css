@@ -1,6 +1,4 @@
 
-
-
 p{
     color: black;  
 }
@@ -13,14 +11,29 @@ p{
 
 .cardStyle{
     height: 200px;
-    width: 200px;
-    padding-top: 80px;
+    width: 320px;
+    padding: 0;
     text-align: center;
-    background: #52C0F5;
     color: #FFF;
-    font-size: 12px;
-    text-transform: uppercase;
-    border-radius: 10px;
+    border-radius: 20px;
+    
+}
+.marqDesign{
+    display:flex;
+    gap: 30px;
+}
+
+.marqImg{
+    width: 280px;
+    height: 200px;
+    border-radius: 20px;
+    margin: auto;
+    padding: 15px;
+}
+
+.marqWidth{
+    height: 550px;
+    padding-top: 0px;
 }
 
 @media only screen and (max-Width:900px) {
@@ -31,5 +44,8 @@ p{
 }
 .layout{  
     margin-top: 30px;
+}
+.cardStyle{
+    width: 200px;
 }
 }

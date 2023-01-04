@@ -5,7 +5,10 @@ import "./About.css";
 const About = () => {
   return (
     <div className="aboutResponsive mx-auto d-flex my-5 justify-content-center align-items-center lg:gap-[150px]">
-      <div className="w-96 mt-2">
+      <div className="w-96 mt-2"
+      data-aos="fade-right"
+      data-aos-delay="50"
+      data-aos-duration="900">
         <h1 className="text-primary">Engineer's Solution</h1>
         <p className="text-start fs-5 mt-4">
           It’s time to step up to the plate and get passionate about your work
@@ -16,7 +19,10 @@ const About = () => {
       </div>
 
       <div>
-        <div className="card w-96 bg-base-100 shadow-xl rounded-4 mb-5">
+        <div className="card w-96 bg-base-100 shadow-xl rounded-4 mb-5"
+        data-aos="zoom-in"
+        data-aos-delay="50"
+        data-aos-duration="900">
           <div className="avatar mx-auto pt-5">
             <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
               <img src="https://avatars.githubusercontent.com/u/76113796?v=4" />

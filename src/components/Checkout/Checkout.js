@@ -1,12 +1,15 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Checkout = () => {
   const getId = useLoaderData();
 
   const { image_url, title } = getId;
 
-  const buy = () => {};
+  const handleBuy = () => {
+    toast.warning('Not Able to Buy', {autoClose: 1000})
+  };
 
   return (
     <div>
@@ -34,7 +37,7 @@ const Checkout = () => {
           <h3 className="text-primary">Want To Buy {title} Course?</h3>
 
           <div className="card-actions justify-end">
-            <button htmlFor="buyNow" className="btn btn-warning">
+            <button htmlFor="buyNow" className="btn btn-warning" onClick={handleBuy}>
               Buy Now
             </button>
           </div>

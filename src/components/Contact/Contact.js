@@ -36,7 +36,10 @@ export const Contact = () => {
 
   return (
     <div className=" d-flex responsiveContact sm:mt-[100px] my-[100px] mx-auto align-items-center lg:w-[850px] ">
-      <div className="infoResponsive w-96 mb-5 ">
+      <div className="infoResponsive w-96 mb-5 "
+      data-aos="fade-right"
+      data-aos-delay="50"
+      data-aos-duration="900">
         <h2 className="font-bold text-start">Get In Touch</h2>
         <p className="font-semibold text-start">
           Feel free to send a message <br></br> using the form
@@ -47,7 +50,10 @@ export const Contact = () => {
         <p className="d-flex w-56 align-items-center gap-2 text-primary">
           <MdEmail size="20px"></MdEmail> ghoseDipayen@gmail.com        </p>
       </div>
-      <div className="block p-5 w-[350px] p-6 rounded-lg mx-auto shadow-lg bg-white max-w-md">
+      <div className="block p-5 w-[350px] p-6 rounded-lg mx-auto shadow-lg bg-white max-w-md"
+      data-aos="fade-left"
+      data-aos-delay="50"
+      data-aos-duration="900">
         <h3 className="text-primary mb-4 mx-auto">Contact</h3>
         <form ref={form} onSubmit={sendEmail} >
           <div className="form-group mb-6">

@@ -6,6 +6,7 @@ import { Carousel } from "3d-react-carousal";
 import "./home.css";
 import { useLoaderData } from "react-router-dom";
 import CardForHome from "./CardForHome";
+import Marquee from "react-fast-marquee";
 
 let slides = [
   <img
@@ -32,11 +33,14 @@ let slides = [
 
 const Home = () => {
   const getCourse= useLoaderData();
-  
+  const cycle=()=>{
+    
+  }
 
   return (
     <div>
-      <Row className="my-4">
+     <div>
+     <Row className="my-4">
         <Col lg="3">
           <CourseList></CourseList>
         </Col>
@@ -52,15 +56,20 @@ const Home = () => {
           </div>
         </Col>
       </Row>
-
-      <div className='cardDesign'>
+     </div>
+    
+      <Marquee className="marqWidth" onCycleComplete={cycle()} pauseOnHover={true} gradientWidth='150px'>
+      <div className='marqDesign'>
          {
             getCourse.map(item=> <CardForHome
                 key={item.id}
                 item={item}
             ></CardForHome>)
          }
-    </div>
+      </div>
+      </Marquee>
+    
+      
     </div>
   );
 };
