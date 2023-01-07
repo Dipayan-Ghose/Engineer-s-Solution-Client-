@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { authContext } from "../Context/AuthProvider/AuthProvider";
 import { FcGoogle, FcDown } from "react-icons/fc";
-import { FaArrowCircleDown, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Login.css';
 import loginImg from "./Login image.jpg";
+import lockBg from "./lockBg.jpg"
 
 const Login = () => {
   const navigate= useNavigate();
@@ -59,11 +60,12 @@ const Login = () => {
   };
 
   return (
-    <div className="w-[800px] mx-auto">
-      <div className="hero Width bg-base-100 d-flex  rounded  my-4">
-        <div className="hero-content flex-col mx-auto">
+
+    <div className="w-[800px] mx-auto bgLock">
+      <div className="hero  bg-base-100 d-flex rounded my-4">
+        <div className="hero-content  flex-col mx-auto">
          <form onSubmit={handleSubmit}>
-         <div className="card flex-shrink-0  mx-auto  max-w-sm shadow-2xl bg-blue-200">
+         <div className="card flex-shrink-0 Width mx-auto  max-w-sm shadow-2xl bg-blue-200">
             <h1 className="text-3xl text-dark mt-2">Login Now!</h1>
 
             <div className="card-body p-4">
@@ -74,7 +76,7 @@ const Login = () => {
                 <input
                   type="text"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered w-100"
                   name='email'
                   required
                   
@@ -87,7 +89,7 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-100" 
                   name='password'
                   required
 
@@ -104,14 +106,14 @@ const Login = () => {
               <div className="form-control mt-1 border-0">
                 <button className="btn btn-primary">Login</button>
               </div>
-              <p className="text-danger my-1">
-                {error}
+              <p className="text-danger m-0"> 
+                {error} <br></br> 
               </p>
             </div>
             <div className="text-center lg:text-left">
             <ul
               tabIndex={0}
-              className="mx-auto w-40 menu p-2 shadow-xl bg-base-100 rounded-box w-52"
+              className="mx-auto w-[150px] menu px-2 shadow-xl bg-base-100 rounded-box w-52"
             >
               <button onClick={googleSignIn} className="w-32 btn btn-ghost d-flex  ">
                 {" "}
@@ -133,6 +135,7 @@ const Login = () => {
       </div>
      
     </div>
+ 
   );
 };
 

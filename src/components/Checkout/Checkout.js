@@ -36,7 +36,7 @@ const Checkout = () => {
           <img className="imgWidth mx-auto rounded-3" src={image_url}></img>
           <h3 className="text-primary">Want To Buy {title} Course?</h3>
 
-          <div className="card-actions justify-end">
+          <div className="card-actions justify-center">
             <button htmlFor="buyNow" className="btn btn-warning" onClick={handleBuy}>
               Buy Now
             </button>

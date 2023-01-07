@@ -7,6 +7,9 @@ import "./home.css";
 import { useLoaderData } from "react-router-dom";
 import CardForHome from "./CardForHome";
 import Marquee from "react-fast-marquee";
+import Contact from "../Contact/Contact";
+import { TypeAnimation } from "react-type-animation";
+import videoBg from "./videoBg.mp4";
 
 let slides = [
   <img
@@ -32,44 +35,74 @@ let slides = [
 ];
 
 const Home = () => {
-  const getCourse= useLoaderData();
-  const cycle=()=>{
-    
-  }
+  const getCourse = useLoaderData();
 
   return (
     <div>
-     <div>
-     <Row className="my-4">
-        <Col lg="3">
-          <CourseList></CourseList>
-        </Col>
-        <Col lg="9" >
-          <div className="layout">
-          <Carousel
-            slides={slides}
-            autoplay={true}
-            interval={5000}
-            arrows={true}
-            // onSlideChange={callback}
-          />
-          </div>
-        </Col>
-      </Row>
-     </div>
-    
-      <Marquee className="marqWidth" onCycleComplete={cycle()} pauseOnHover={true} gradientWidth='150px'>
-      <div className='marqDesign'>
-         {
-            getCourse.map(item=> <CardForHome
-                key={item.id}
-                item={item}
-            ></CardForHome>)
-         }
+      <div>
+        <Row className="my-4">
+          <Col lg="3">
+            <CourseList></CourseList>
+          </Col>
+          <Col lg="9">
+            <div className="layout">
+              <Carousel
+                slides={slides}
+                autoplay={true}
+                interval={5000}
+                arrows={true}
+                // onSlideChange={callback}
+              />
+            </div>
+          </Col>
+        </Row>
       </div>
+    <div className="mt-[60px] text-start bg-gray-100 p-4 rounded-4">
+    <h3 className="text-blue-700">Professional Certificates</h3>
+        <h1 className="fs-1 font-extralight my-4">
+          Get job-ready for an in-demand career. 
+        </h1>
+        <h2 className="font-normal">Break into a new field like
+          information technology or data science.<br></br> No prior experience necessary
+          to get started.</h2>
+    </div>
+      <Marquee
+        className="marqWidth"
+        speed={50}
+        pauseOnHover={true}
+        gradientWidth="50px"
+      >
+        <div className="marqDesign">
+          {getCourse.map((item) => (
+            <CardForHome key={item.id} item={item}></CardForHome>
+          ))}
+        </div>
       </Marquee>
-    
-      
+
+      <div className="mt-5">
+        <TypeAnimation
+          sequence={[
+            "What You Will Learn?", // Types 'One'
+            3000, // Waits 1s
+            "You can build and train a neural network with TensorFlow.", // Deletes 'One' and types 'Two'
+            3000, // Waits 2s
+            "Also can apply best practices for machine learning development. ", // Types 'Three' without deleting 'Two'
+            5000,
+            "Your models generalize to data and tasks in the real world.",
+            4000,
+          ]}
+          wrapper="div"
+          cursor={true}
+          repeat={Infinity}
+          deletionSpeed={60}
+          speed={30}
+          style={{ fontSize: "35px" }}
+        ></TypeAnimation>
+      </div>
+
+      <div>
+        <Contact></Contact>
+      </div>
     </div>
   );
 };

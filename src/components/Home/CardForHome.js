@@ -17,7 +17,7 @@ const CardForHome = ({ item }) => {
               borderRadius="10px"
             ></Skeleton>
           ) : (
-            <div className="mx-auto rounded-4 bg-base-100 shadow-2xl m-5 ">
+            <div className=" mx-4 rounded-4 bg-base-100 shadow-xl m-5 ">
               <figure>
                 <img className="marqImg" src={image_url} alt="" />
               </figure>

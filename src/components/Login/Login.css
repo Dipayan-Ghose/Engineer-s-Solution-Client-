@@ -1,6 +1,7 @@
-.width{
-    Width: 90%;
+.Width{
+    Width:400px ;
 }
+
 
 @media only screen and (min-Width:800px)  {
     .visibility img{

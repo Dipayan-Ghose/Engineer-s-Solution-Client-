@@ -20,7 +20,8 @@ p{
 }
 .marqDesign{
     display:flex;
-    gap: 30px;
+    
+    overflow: hidden;
 }
 
 .marqImg{
@@ -32,10 +33,16 @@ p{
 }
 
 .marqWidth{
-    height: 550px;
+    height: 400px;
     padding-top: 0px;
+    overflow: hidden;
 }
 
+
+  
+ 
+
+  
 @media only screen and (max-Width:900px) {
     .imgWidht{
     max-width: 800px;
