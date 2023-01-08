@@ -10,7 +10,7 @@ const Main = () => {
         <div>
             <Header></Header>
 
-            <Container>
+            <Container >
                 
                     <Outlet></Outlet>
 

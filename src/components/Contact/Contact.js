@@ -49,8 +49,9 @@ export const Contact = () => {
         <p className="d-flex w-56 align-items-center gap-2 text-primary">
           <MdEmail size="20px"></MdEmail> ghosedipayen@gmail.com        </p>
       </div>
-      <div className="block p-5 w-[380px] p-6 rounded-lg mx-auto shadow-lg bg-white max-w-md"
-      data-aos="fade-left"
+      
+      <div className="block p-5 lg:w-[380px] p-6 rounded-lg mx-auto shadow-lg bg-white "
+      data-aos="fade-up"
       data-aos-delay="50"
       data-aos-duration="900">
         <h3 className="text-primary mb-4 mx-auto">Contact</h3>

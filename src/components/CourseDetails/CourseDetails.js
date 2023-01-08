@@ -23,7 +23,7 @@ const CourseDetails = () => {
     <Col lg='9'>
     <div>
 <div className="window border rounded-4 bg-blue-100">
-  <div className="p-2  text-white fs-2 rounded-4 bg-blue-700">
+  <div className="p-2 text-white fs-2 rounded-4 bg-blue-700">
     <div className="d-flex align-items-center "><span className="mx-auto">{title}</span><p className="mb-0 cursor-pointer">
      <Pdf targetRef={ref} filename="Course Info.pdf">
     {({ toPdf }) => <FaRegFilePdf onClick={toPdf}></FaRegFilePdf>}

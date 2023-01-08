@@ -3,9 +3,12 @@
 }
 
 
-@media only screen and (min-Width:800px)  {
+@media only screen and (max-Width:800px)  {
     .visibility img{
-        visibility: visible;    
+        visibility: visible;  
+    }
+    .Width{
+        Width:300px ;
     }
     
 }

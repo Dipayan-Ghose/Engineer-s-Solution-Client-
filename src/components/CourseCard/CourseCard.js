@@ -14,27 +14,27 @@ const CourseCard = ({ item, buttonHandle }) => {
         loading? <Skeleton height="150px" width="300px" borderRadius='10px'></Skeleton>
         :
       
-      <div className="card cardDesign mx-auto rounded-4 bg-base-100 shadow-xl"  
+      <div className="card cardDesign lg:w-[450px] mx-auto rounded-4 bg-base-100 shadow-xl"  
       data-aos="fade-up"
       data-aos-delay="70"
       data-aos-duration="900">
         <figure>
-          <img className="w-full h-64" src={image_url} alt="" />
+          <img className="imageLayout" src={image_url} alt="" />
         </figure>
-        <div className="card-body">
+        <div className="card-body ">
           <h2 className="card-title">{title}</h2>
           {details.length > 200 ? (
             <p className="text-start">{details.slice(0, 150) + "..."}</p>
           ) : (
             <p>{details}</p>
           )}
-          <div className="card-actions justify-between">
+          <div className="card-actions flexWrap justify-between">
             <h5 className="text-primary">Course Rating: {rating.number}</h5>
 
             <Link to={`/courseDetails/${id}`}>
               <Button
                 variant="primary"
-              > Course Details</Button>
+              > See Details</Button>
             </Link>
           </div>
         </div>

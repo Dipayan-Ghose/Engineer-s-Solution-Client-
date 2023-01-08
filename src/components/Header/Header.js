@@ -23,20 +23,21 @@ const clickLogout=()=>{
 
   return (
   
- <Navbar  collapseOnSelect expand="lg" variant="dark" className="headerDesign bg-gradient-to-r from-blue-500 to-cyan-500">
+<div className="sticky top-0 z-50  ">
+<Navbar  collapseOnSelect expand="lg" variant="dark" className="headerDesign  bg-gradient-to-r from-blue-500 to-cyan-500">
     <Container  >
           <Image src={headerLogo} className='logo rounded-5 mx-1 '></Image> 
     <Navbar.Brand ><Link to='/' className='fs-4 shadow p-2 rounded linkDes'> Engineers' <span className="text-yellow-300">Solution</span> </Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto">
+        <Nav className="me-auto m-2 gap-1 lg:m-0 lg:gap-0 ">
           <Link to='/' className='linkDesign'>Home</Link>
           <Link to='/courses' className='linkDesign'>Courses</Link>
           <Link to='/contact' className='linkDesign'>Contact</Link>
           <Link to='/about' className='linkDesign'>About</Link>
 
         </Nav>
-        <Nav className=' img'>
+        <Nav className='img'>
           {
             user ?
              <div className="rightSide ">
@@ -54,19 +55,13 @@ const clickLogout=()=>{
            </div>
           }
          
-          
         </Nav>
       </Navbar.Collapse>
      
     </Container>
     <ToastContainer />
   </Navbar>
-   
-    
-   
-
-
-
+</div>
     
     );
 };

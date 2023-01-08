@@ -79,14 +79,14 @@ const Home = () => {
         </div>
       </Marquee>
 
-      <div className="mt-5">
+      <div className="mt-4 h-[180px] lg:h-auto">
         <TypeAnimation
           sequence={[
             "What You Will Learn?", // Types 'One'
             3000, // Waits 1s
             "You can build and train a neural network with TensorFlow.", // Deletes 'One' and types 'Two'
             3000, // Waits 2s
-            "Also can apply best practices for machine learning development. ", // Types 'Three' without deleting 'Two'
+            "Also can practice for machine learning development. ", // Types 'Three' without deleting 'Two'
             5000,
             "Your models generalize to data and tasks in the real world.",
             4000,

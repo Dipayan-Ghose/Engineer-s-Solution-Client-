@@ -1,12 +1,22 @@
-.cardDesign{
-    width: 400px;
-    
+.imageLayout{
+    width: 450px;
+    height: 250px;
 }
-
+.flexWrap{
+    flex-wrap: nowrap;
+    align-items: center;
+}
 @media only screen and (max-Width:800px){
     .cardDesign{
-        margin-top: 30px;
-        
+        margin-top: 20px;
+        width: 330px;      
     }
+    .imageLayout{
+        width: 330px;
+        height: 200px;
+    }
+    /* .cardBodyHeight{
+        height: 240px;
+    } */
     
 }

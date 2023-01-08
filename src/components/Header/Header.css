@@ -56,20 +56,17 @@
   margin-right: 10%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.Sticky{
-  position: fixed;
-  top: 0;
-  left: 0;
-  
-}
+
 
 .linkDes:hover {
   color: white;
 }
 
-.headerDesign{
-  position:relative;
-}
+/* .headerDesign{
+  position:static;
+ 
+  top: 0;
+} */
 
 .rightSide {
   display: flex;

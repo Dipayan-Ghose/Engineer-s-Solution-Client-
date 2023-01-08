@@ -10,7 +10,7 @@ const About = () => {
       data-aos-delay="50"
       data-aos-duration="900">
         <h1 className="text-primary">Engineer's Solution</h1>
-        <p className="text-start fs-5 mt-4">
+        <p className="text-start fs-5 mt-4 textWidth">
           It’s time to step up to the plate and get passionate about your work
           commit to making eLearning courses that don't bore people to tears,
           but instead inspire and motivate them to learn a new skill, change a
@@ -19,7 +19,7 @@ const About = () => {
       </div>
 
       <div>
-        <div className="card w-96 bg-base-100 shadow-xl rounded-4 mb-5"
+        <div className="card myCard lg:w-96 bg-base-100 shadow-xl rounded-4 mb-5"
         data-aos="zoom-in"
         data-aos-delay="50"
         data-aos-duration="900">

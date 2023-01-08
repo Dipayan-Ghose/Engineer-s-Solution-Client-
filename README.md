@@ -1,11 +1,11 @@
 # About This Project: 
 Website Name: 
-## Engineer's Solution
-**Here is the live site link :** https://develop-course.web.app/
+## Engineers' Solution
+**Here is the live site link :** https://develop-course-c9ab0.web.app
 
-**Here is the github link :** Client Side: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Dipayan-Ghose
+**Here is the github link :** Client Side: https://github.com/Dipayan-Ghose/Engineer-s-Solution-Client-
 
- Server Side: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-Dipayan-Ghose
+ Server Side: https://github.com/Dipayan-Ghose/Engineer-s-Solution-server-
 
 ## Project Description:
 
@@ -14,7 +14,7 @@ Website Name:
     * hooks, 
     * some packagdes,
     * css, 
-    * react boostrap etc.
+    * tailwind, DaisyUi etc.
 
 * This website is developed to provide a online computer course where algorithms, networking, data structure, microcontrollers, web programming are available.
 

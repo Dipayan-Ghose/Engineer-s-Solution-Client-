@@ -44,9 +44,9 @@ updateUserProfile(profile)
 
     return (
         <div >
-              <div className="hero width mx-auto min-h-screen  rounded my-4">
+              <div className="hero width mx-auto   rounded my-2">
             <div className="card flex-shrink-0 width max-w-sm shadow-2xl bg-blue-200 mx-auto my-4">
-            <h1 className="text-3xl text-dark mt-2">Register Here</h1>
+            <h1 className="text-3xl text-dark mt-4">Register Here</h1>
             <form onSubmit={handleRegistration}>
             <div className="card-body">
             <div className="form-control border-0">
@@ -56,7 +56,7 @@ updateUserProfile(profile)
                 <input
                   type="text"
                   placeholder="Your Full Name"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   name='name'
                 />
               </div>
@@ -67,7 +67,7 @@ updateUserProfile(profile)
                 <input
                   type="text"
                   placeholder="Your Photo Url"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   name='url'
                 />
               </div>
@@ -78,7 +78,7 @@ updateUserProfile(profile)
                 <input
                   type="text"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   name='email'
 
                   required
@@ -91,7 +91,7 @@ updateUserProfile(profile)
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   name='password'
 
                   required
@@ -103,7 +103,7 @@ updateUserProfile(profile)
               </div>
               <p className="text-danger my-1">{error}</p>
             </div>
-            <p className=" text-primary mb-1 mb-0 text-center ">
+            <p className=" text-primary mb-4  text-center ">
                     Already have an account? <br></br>
                     <span> 
                       <Link to="/login">Login Now</Link>{" "}

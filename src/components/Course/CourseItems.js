@@ -11,11 +11,11 @@ const getItems= useLoaderData();
 
     return (
         <Row className='my-4'>
-    <Col lg='3'>
+    <Col lg='3' >
     <CourseList></CourseList>
     </Col>
     <Col lg='9'>
-    <div className='cardDesign'>
+    <div className='cardGrid'>
          {
             getItems.map(item=> <CourseCard 
                 key={item.id}

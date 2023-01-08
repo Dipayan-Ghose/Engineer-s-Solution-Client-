@@ -20,7 +20,7 @@ const CourseList = ({ course }) => {
   }, []);
 
   return (
-    <div>
+    <div >
         <div className="card bg-base-100 rounded rounded-4 cardHeight shadow-xl">
         <div className="card-body" >
         { 
