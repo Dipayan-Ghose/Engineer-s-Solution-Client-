@@ -1,8 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import "./About.css";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="aboutResponsive mx-auto d-flex my-5 justify-content-center align-items-center lg:gap-[150px]">
       <div className="w-96 mt-2"

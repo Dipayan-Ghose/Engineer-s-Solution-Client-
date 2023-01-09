@@ -1,14 +1,20 @@
 import React from "react";
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Checkout = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
   const getId = useLoaderData();
 
   const { image_url, title } = getId;
 
   const handleBuy = () => {
-    toast.warning('Not Able to Buy', {autoClose: 1000})
+    toast.warning('Not Able to Buy Now', {autoClose: 2000})
   };
 
   return (
@@ -31,7 +37,7 @@ const Checkout = () => {
           </p>
         </div>
       </div>
-      <div className="card mx-auto my-5 w-[500px] bg-base-100 shadow-xl">
+      <div className="card mx-auto my-5 lg:w-[500px] bg-base-100 shadow-xl">
         <div className="card-body">
           <img className="imgWidth mx-auto rounded-3" src={image_url}></img>
           <h3 className="text-primary">Want To Buy {title} Course?</h3>

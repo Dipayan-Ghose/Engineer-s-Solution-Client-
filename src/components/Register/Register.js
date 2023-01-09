@@ -1,10 +1,14 @@
 import React, { useContext, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { authContext } from '../Context/AuthProvider/AuthProvider';
 import './Register.css';
 
 const Register = () => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 const {registerUser, updateUserProfile}= useContext(authContext);
 const [error, setError]= useState('');
 
@@ -21,6 +25,10 @@ registerUser(email, password)
    .then((res) => {
         const user = res.user;
         console.log(user);
+        toast.success(`Welcome ${user?.displayName}`, {
+          position: "bottom-center",
+          autoClose: 1500,
+        });
         form.reset();
         handleUpdate(name,photo);
       })

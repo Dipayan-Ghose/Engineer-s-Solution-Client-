@@ -6,10 +6,14 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import loginImg from "./Login image.jpg";
-import lockBg from "./lockBg.jpg";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [error, setError] = useState("");
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -28,13 +32,17 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        toast.success(`Welcome ${user?.displayName}`, {
+          position: "bottom-center",
+          autoClose: 1500,
+        });
         form.reset();
         setError("");
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.error(error);
-        setError(error.message);
+        console.error(error.code);
+        setError(error.code);
       });
   };
 
@@ -42,7 +50,10 @@ const Login = () => {
     providerLogin(providerGoogle)
       .then((res) => {
         const user = res.user;
-        console.log(user);
+        toast.success(`Welcome ${user?.displayName}`, {
+          position: "bottom-center",
+          autoClose: 1500,
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
@@ -53,6 +64,10 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        toast.success(`Welcome ${user?.displayName}`, {
+          position: "bottom-center",
+          autoClose: 1500,
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
@@ -62,10 +77,9 @@ const Login = () => {
     <div className="lg:w-[800px] mx-auto bgLock">
       <div className="hero mx-auto bg-base-100 lg:d-flex rounded my-4">
         <div className="flex-col mx-auto">
-          <form onSubmit={handleSubmit}>
-            <div className="card flex-shrink-0 w-[320px] lg:w-[400px] mx-auto shadow-2xl bg-blue-200">
-              <h1 className="text-3xl text-dark mt-2">Login Now!</h1>
-
+          <div className="card flex-shrink-0 w-[320px] lg:w-[400px] mx-auto shadow-2xl bg-blue-200">
+            <h1 className="text-3xl text-dark mt-2">Login Now!</h1>
+            <form onSubmit={handleSubmit}>
               <div className="card-body p-4">
                 <div className="form-control border-0">
                   <label className="label">
@@ -103,33 +117,33 @@ const Login = () => {
                   <button className="btn btn-primary">Login</button>
                 </div>
                 <p className="text-danger p-0 m-0">
-                  {error} <br></br>
+                  {error? `Ops! ${error}` : ''} <br></br>
                 </p>
               </div>
-              <hr className="p-0 m-0 w-72 mx-auto border-2"></hr>
-              <div className="text-center lg:text-left">
-                <ul
-                  tabIndex={0}
-                  className="mx-auto w-[135px] lg:w-[150px] menu px-2 shadow-xl bg-base-100 rounded-box w-52"
+            </form>
+            <hr className="p-0 m-0 w-72 mx-auto border-2"></hr>
+            <div className="text-center lg:text-left">
+              <ul
+                tabIndex={0}
+                className="mx-auto w-[130px] lg:w-[150px] menu px-2 shadow-xl bg-base-100 rounded-box w-52"
+              >
+                <button
+                  onClick={googleSignIn}
+                  className="w-32 btn btn-ghost d-flex  "
                 >
-                  <button
-                    onClick={googleSignIn}
-                    className="w-32 btn btn-ghost d-flex  "
-                  >
-                    {" "}
-                    <FcGoogle></FcGoogle> <span className="mx-2"> Google</span>{" "}
-                  </button>
+                  {" "}
+                  <FcGoogle></FcGoogle> <span className="mx-2"> Google</span>{" "}
+                </button>
 
-                  <button
-                    onClick={githubSignIn}
-                    className="w-32 btn btn-ghost d-flex"
-                  >
-                    <FaGithub></FaGithub> <span className="mx-2 "> Github</span>{" "}
-                  </button>
-                </ul>
-              </div>
+                <button
+                  onClick={githubSignIn}
+                  className="w-32 btn btn-ghost d-flex"
+                >
+                  <FaGithub></FaGithub> <span className="mx-2 "> Github</span>{" "}
+                </button>
+              </ul>
             </div>
-          </form>
+          </div>
         </div>
         <div className="invisible visibility">
           <img className=" w-[400px]" src={loginImg}></img>

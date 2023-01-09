@@ -12,6 +12,10 @@ import { authContext } from "../Context/AuthProvider/AuthProvider";
 const CourseList = ({ course }) => {
    const {loading}= useContext(authContext); 
   const [courses, setCourses] = useState([]);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     fetch("https://develop-course-server.vercel.app/course")

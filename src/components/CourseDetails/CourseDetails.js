@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import CourseList from "../LeftSide/CourseList";
 import "./CourseDetails.css";
@@ -11,9 +11,10 @@ import {FaRegFilePdf} from 'react-icons/fa';
 const CourseDetails = () => {
   const loadDetails = useLoaderData();
   const { id, details, title, total_enrolled, image_url } = loadDetails;
- 
   const ref = React.createRef();
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <Row className="my-4">
     <Col lg='3'>

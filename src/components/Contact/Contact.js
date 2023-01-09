@@ -3,9 +3,15 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import "./Contact.css";
+import { useEffect } from "react";
+import { success } from "daisyui/src/colors";
 
 export const Contact = () => {
   const form = useRef();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const sendEmail = (e) => {
     e.preventDefault();
     const resetForm = e.target;
@@ -26,9 +32,9 @@ export const Contact = () => {
         }
       );
     resetForm.reset();
-    toast("Message Sent Successfully", {
+    toast.success("Message Sent Successfully", {
       position: "top-center",
-      autoClose: 1000,
+      autoClose: 1200,
     });
   };
 

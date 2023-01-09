@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import CourseCard from "../CourseCard/CourseCard";
 import CourseList from "../LeftSide/CourseList";
@@ -36,7 +36,9 @@ let slides = [
 
 const Home = () => {
   const getCourse = useLoaderData();
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div>
       <div>
@@ -79,7 +81,7 @@ const Home = () => {
         </div>
       </Marquee>
 
-      <div className="mt-4 h-[180px] lg:h-auto">
+      <div className="mt-4 h-[190px] lg:h-auto">
         <TypeAnimation
           sequence={[
             "What You Will Learn?", // Types 'One'

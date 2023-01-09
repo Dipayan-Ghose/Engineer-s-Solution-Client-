@@ -15,7 +15,7 @@ const Header = () => {
 const {user, providerLogout} = useContext(authContext); //destructured
 
 const clickLogout=()=>{
-  toast("Sign Out Successfully",{ position: "top-center",autoClose: 1000});
+  toast.success("Sign Out Successfully",{ position: "bottom-center",autoClose: 1000});
   providerLogout()
   .then(()=>{})
   .catch(error=>console.error(error))
@@ -27,9 +27,9 @@ const clickLogout=()=>{
 <Navbar  collapseOnSelect expand="lg" variant="dark" className="headerDesign  bg-gradient-to-r from-blue-500 to-cyan-500">
     <Container  >
           <Image src={headerLogo} className='logo rounded-5 mx-1 '></Image> 
-    <Navbar.Brand ><Link to='/' className='fs-4 shadow p-2 rounded linkDes'> Engineers' <span className="text-yellow-300">Solution</span> </Link></Navbar.Brand>
+    <Navbar.Brand ><Link to='/' className=' fs-4 shadow p-2 rounded linkDes'> Engineers' <span className="text-yellow-300">Solution</span> </Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+      <Navbar.Collapse id="responsive-navbar-nav" >
         <Nav className="me-auto m-2 gap-1 lg:m-0 lg:gap-0 ">
           <Link to='/' className='linkDesign'>Home</Link>
           <Link to='/courses' className='linkDesign'>Courses</Link>
@@ -40,8 +40,8 @@ const clickLogout=()=>{
         <Nav className='img'>
           {
             user ?
-             <div className="rightSide ">
-                <div className='my-auto title'> 
+             <div className=" rightSide">
+              <div className='my-auto title'> 
                <h3 href="" className='  ' title={user?.displayName }> {user.uid? <Image style={{width: '35px'}} roundedCircle src={user?.photoURL}></Image> : <FaUser style={{width: '20px'}}></FaUser> }</h3>
               </div> 
               <div className=''> 
