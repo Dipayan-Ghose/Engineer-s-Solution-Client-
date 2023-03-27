@@ -38,12 +38,22 @@ p{
     overflow: hidden;
 }
 
+.cardItem:hover{
+        background-color: #F5F5F5;
+        margin-top: -10px;
+        cursor: pointer;
+        transition-duration: 1000ms;
+        transition-delay: 1000ms;
+        box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+      
+}
 
   
  
 
   
-@media only screen and (max-Width:900px) {
+@media only screen and (max-Width:800px) {
     .imgWidht{
     max-width: 800px;
     height: 250px;
@@ -55,4 +65,9 @@ p{
 .cardStyle{
     width: 200px;
 }
+
+[data-aos-delay] {
+    transition-delay: 0s !important;
+}
+
 }

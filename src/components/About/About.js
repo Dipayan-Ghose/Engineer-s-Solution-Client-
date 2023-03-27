@@ -29,6 +29,7 @@ const About = () => {
         data-aos-duration="900">
           <div className="avatar mx-auto pt-5">
             <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+             
               <img src="https://avatars.githubusercontent.com/u/76113796?v=4" />
             </div>
           </div>

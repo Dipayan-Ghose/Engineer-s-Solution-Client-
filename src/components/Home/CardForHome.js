@@ -9,7 +9,7 @@ const CardForHome = ({ item }) => {
   const { id, rating, image_url, details, total_enrolled, title } = item;
   const {loading}= useContext(authContext);
   return (
-      <div className="">
+      <div className=" cursor-pointer">
           {loading ? (
             <Skeleton
               height="150px"
